@@ -1,23 +1,22 @@
-
 pipeline {
     agent any
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/teemueka/TimeCalculator.git'
+                git 'https://github.com/teemueka/TempConverter.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -35,4 +34,3 @@ pipeline {
         }
     }
 }
-
